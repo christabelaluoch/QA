@@ -145,7 +145,6 @@ test('adds an item even if it already exists in the array', () => {
   const arr = ["apple","orange","banana"];
   const item = "orange";
   const result = addItem(arr, item);
-  //
   expect(result).toEqual(["apple","orange","banana","orange"]);
 });
 
