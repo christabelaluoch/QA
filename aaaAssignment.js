@@ -84,29 +84,25 @@ function containsWord(sentence, word) {
 }
 test('returns true when word is present', () => {
   const sentence = "The girl that died";
-  const word = "died";
-  const result = containsWord(sentence, word);
+  const result = containsWord(sentence, "died");
   expect(result).toBe(true);
 });
 
 test('returns false when word is missing', () => {
   const sentence = "That car is mine";
-  const word = "grey";
   const result = containsWord(sentence, "grey");
   expect(result).toBe(false);
 });
 
 test('returns true when sentence is exactly the word', () => {
   const sentence = "paint";
-  const word = "paint";
-  const result = containsWord(sentence,word);
+  const result = containsWord(sentence,"paint");
   expect(result).toBe(true);
 });
 
 test('returns false for different casing', () => {
   const sentence = "it Ends with us";
-  const word = "ends";
-  const result = containsWord(sentence,word);
+  const result = containsWord(sentence,"ends");
   expect(result).toBe(false);
 });
 
@@ -122,31 +118,28 @@ function addItem(arr, item) {
 }
 test('adds item to existing array', () => {
   const arr = [10,9,8];
-  const item =7;
-  const result = addItem(arr,item );
+  const result = addItem(arr,7 );
   expect(result).toEqual([10,9,8,7]);
 });
 
 test('adds item to empty array', () => {
   const arr = [];
-  const item = "APPLE";
-  const result = addItem(arr, item);
+  const result = addItem(arr, "APPLE");
   expect(result).toEqual(["APPLE"]);
 });
 
 test('adds null value as valid item', () => {
   const arr = ["Mango"];
-  const item = null;
-  const result = addItem(arr, item);
+  const result = addItem(arr, null);
   expect(result).toEqual(["Mango", null]);
 });
 
 test('adds an item even if it already exists in the array', () => {
   const arr = ["apple","orange","banana"];
-  const item = "orange";
-  const result = addItem(arr, item);
+  const result = addItem(arr, "orange");
   expect(result).toEqual(["apple","orange","banana","orange"]);
 });
+
 
 
 
